@@ -166,18 +166,15 @@ function gotData(data) {
   var keys = Object.keys(drawings);
 
   // Displaing the keys' key
-  for(var i = 0; i < keys.length; i++) {
+  for (var i = 0; i < keys.length; i++) {
     var key = keys[i];
-    var li = createElement('li', '');
+    
+    var li = createElement('li');
     li.class('listing');
-    var ahref = createA('#',key);
+    var ahref = createA('?id=' + key, key);
     ahref.mousePressed(showDrawing);
     ahref.parent(li);
 
-    // Creating a permalink
-    var perma = createA('?id=' + key,'permalink');
-    perma.parent(li);
-    perma.style('padding','4px');
     li.parent('drawinglist');
   }
 }
